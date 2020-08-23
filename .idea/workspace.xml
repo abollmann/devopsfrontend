@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fea6677c-566f-4b1e-8b24-ab9cfcf673e4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/controllers/blogs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/middleware/error_handlers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/models/blog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/models/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/tests/blog_api.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/tests/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/tests/list_helper.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/utils/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/utils/list_helper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/utils/logging.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/components/Blog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/components/Blog.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/components/BlogDetails.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/components/BlogForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/components/Login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/components/Message.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/components/Togglealbe.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/services/blogs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/services/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/setupTests.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/keycloak.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Devices.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TenantDevicesForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TenantForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/helper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/SiteLayout.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/SiteLayout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/auth/actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/auth/reducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/devices/actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/devices/reducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/reducers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/serviceWorker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/buildings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/devices.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/tenants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/setupTests.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../part2/phonebook/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../part2/phonebook/db.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1gHga7NOYC6b6Oot40okOzU7kqk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="ts.external.directory.path" value="C:\Users\Aron\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\202.6397.88\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Aron\Desktop\fullstack\part6\devopsfrontend\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Aron\Desktop\fullstack\part6\devopsfrontend\src" />
+      <recent name="C:\Users\Aron\Desktop\fullstack\part6\devopsfrontend\src\redux" />
+      <recent name="C:\Users\Aron\Desktop\fullstack\part6\devopsfrontend\public" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fea6677c-566f-4b1e-8b24-ab9cfcf673e4" name="Default Changelist" comment="" />
+      <created>1597776992758</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597776992758</updated>
+      <workItem from="1597776993803" duration="5959000" />
+      <workItem from="1597834830530" duration="4757000" />
+      <workItem from="1597839598260" duration="14850000" />
+      <workItem from="1598118755863" duration="1671000" />
+      <workItem from="1598178873969" duration="20861000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="816" y="268" key="CommitChangelistDialog2" timestamp="1598207556331">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="816" y="268" key="CommitChangelistDialog2/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598207556331" />
+    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1598119937374">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598119937374" />
+    <state width="2540" height="400" key="GridCell.Tab.0.bottom" timestamp="1598207595805">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2540" height="400" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598207595805" />
+    <state width="2540" height="400" key="GridCell.Tab.0.center" timestamp="1598207595805">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2540" height="400" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598207595805" />
+    <state width="2540" height="400" key="GridCell.Tab.0.left" timestamp="1598207595805">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2540" height="400" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598207595805" />
+    <state width="2540" height="400" key="GridCell.Tab.0.right" timestamp="1598207595805">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2540" height="400" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598207595805" />
+    <state width="2540" height="492" key="GridCell.Tab.1.bottom" timestamp="1597842448319">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2540" height="492" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1597842448319" />
+    <state width="2540" height="492" key="GridCell.Tab.1.center" timestamp="1597842448318">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2540" height="492" key="GridCell.Tab.1.center/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1597842448318" />
+    <state width="2540" height="492" key="GridCell.Tab.1.left" timestamp="1597842448318">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2540" height="492" key="GridCell.Tab.1.left/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1597842448318" />
+    <state width="2540" height="492" key="GridCell.Tab.1.right" timestamp="1597842448319">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2540" height="492" key="GridCell.Tab.1.right/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1597842448319" />
+    <state width="2540" height="492" key="GridCell.Tab.2.bottom" timestamp="1597842448320">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2540" height="492" key="GridCell.Tab.2.bottom/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1597842448320" />
+    <state width="2540" height="492" key="GridCell.Tab.2.center" timestamp="1597842448319">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2540" height="492" key="GridCell.Tab.2.center/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1597842448319" />
+    <state width="2540" height="492" key="GridCell.Tab.2.left" timestamp="1597842448319">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2540" height="492" key="GridCell.Tab.2.left/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1597842448319" />
+    <state width="2540" height="492" key="GridCell.Tab.2.right" timestamp="1597842448320">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2540" height="492" key="GridCell.Tab.2.right/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1597842448320" />
+    <state width="2540" height="492" key="GridCell.Tab.3.bottom" timestamp="1597842448320">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2540" height="492" key="GridCell.Tab.3.bottom/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1597842448320" />
+    <state width="2540" height="492" key="GridCell.Tab.3.center" timestamp="1597842448320">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2540" height="492" key="GridCell.Tab.3.center/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1597842448320" />
+    <state width="2540" height="492" key="GridCell.Tab.3.left" timestamp="1597842448320">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2540" height="492" key="GridCell.Tab.3.left/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1597842448320" />
+    <state width="2540" height="492" key="GridCell.Tab.3.right" timestamp="1597842448320">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2540" height="492" key="GridCell.Tab.3.right/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1597842448320" />
+    <state x="963" y="411" width="634" height="578" key="find.popup" timestamp="1598199690049">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="963" y="411" width="634" height="578" key="find.popup/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598199690049" />
+  </component>
+</project>
