@@ -1,0 +1,18 @@
+stages:
+- name: Publish
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: awcloud/heaterbilling:${CICD_EXECUTION_SEQUENCE}
+      registry: 127.0.0.1:34923
+- name: Deploy
+  steps:
+  - applyYamlConfig:
+      path: ./deploy/deployment-dev.yaml
+  - applyYamlConfig:
+      path: ./deploy/deployment-stag.yaml
+  - applyYamlConfig:
+      path: ./deploy/deployment-prod.yaml
+timeout: 60
+notification: {}
