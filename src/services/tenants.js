@@ -11,5 +11,9 @@ const create = async (token, body) => {
   return response.data
 }
 
+const distributeDevices = async (token, body) => {
+  const response = await api.put('tenants', body, {headers: { Authorization: `Bearer ${token}` }})
+  return response.data
+}
 
-export default {getAll, create}
+export default {getAll, create, distributeDevices}

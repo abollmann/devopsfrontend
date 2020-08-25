@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: heaterbilling
+  namespace: dev
+spec:
+  selector:
+    app: heaterbilling
+  ports:
+  - port: 3000
+    targetPort: 3000
+    name: heaterbilling
+    protocol: TCP
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: heaterbilling
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: heaterbilling
+  template:
+    metadata:
+      labels:
+        app: heaterbilling
+    spec:
+      imagePullSecrets:
+        - name: pipeline-docker-registry
+      nodeName: app-node-1
+      containers:
+        - name: heaterbilling
+          image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: heaterbilling-ingress
+  namespace: dev
+spec:
+  rules:
+    - host: dev.api.116.203.242.235.xip.io
+      http:
+        paths:
+          - backend:
+              serviceName: heaterbilling
+              servicePort: 3000
+  tls:
+    - hosts:
+        - 116.203.242.235.xip.io

@@ -23,6 +23,7 @@ import {
 } from 'react-router-dom'
 import TenantForm from '../components/TenantForm'
 import TenantDevicesForm from '../components/TenantDevicesForm'
+import Tenants from '../components/Tenants';
 
 const {Header, Sider, Content} = Layout
 
@@ -98,7 +99,7 @@ const SiteLayout = () => {
                 <TenantDevicesForm />
               </Route>
               <Route path="/">
-                <Devices />
+                <Tenants />
               </Route>
             </Switch>
           </Content>

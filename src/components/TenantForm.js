@@ -3,7 +3,7 @@ import {Row, Col, Form, Input, Button, Select, Divider, Alert} from 'antd'
 import tenantService from '../services/tenants'
 import {useSelector} from 'react-redux'
 
-const {Option} = Select;
+const {Option} = Select
 const layout = {
   labelCol: {
     span: 8,
@@ -32,14 +32,14 @@ const TenantForm = () => {
   }
 
   const onReset = () => {
-    formRef.current.resetFields();
+    formRef.current.resetFields()
   }
 
   return (
     <Form {...layout} ref={formRef} name="control-ref" onFinish={onFinish}>
       {successMessage &&
       <Alert
-        message="Mieter erstellt Tips"
+        message="Mieter erstellt"
         type="success"
         showIcon
         closable
@@ -49,7 +49,7 @@ const TenantForm = () => {
       {errorMessage &&
       <Alert
         message="Mieter konnte nicht erstellt werden"
-        description="Serververbindung und Mailadresse prüfen"
+        description="Serververbindung oder Mailadresse nicht einzigartig"
         type="error"
         showIcon
         closable
