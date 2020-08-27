@@ -1,8 +1,8 @@
-export const isAdmin = userData => {
+export const getRole = userData => {
   try {
-    return userData.resourceAccess['api-gateway-login'].roles.includes('admin')
+    return userData.resource_access['api-gateway-login'].roles.includes('admin') ? 'Administrator' : 'Mieter'
   } catch {
-    return false
+    return 'Mieter'
   }
 }
 

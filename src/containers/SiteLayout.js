@@ -13,13 +13,14 @@ import './SiteLayout.css'
 import {useDispatch, useSelector} from 'react-redux'
 import Devices from '../components/Devices'
 import {authActions} from '../redux/auth/actions'
-import {isAdmin} from '../components/helper'
+import {getRole} from '../components/helper'
 import {getAllDevices} from '../redux/devices/reducer'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from 'react-router-dom'
 import TenantForm from '../components/TenantForm'
 import TenantDevicesForm from '../components/TenantDevicesForm'
@@ -61,7 +62,7 @@ const SiteLayout = () => {
           </div>
           <Menu theme="dark" mode="inline">
             <Menu.Item key="1" icon={<DatabaseOutlined/>}>
-              <Link to="/">Gerätedaten</Link>
+              <Link to="/">Mieterdaten</Link>
             </Menu.Item>
             <Menu.Item key="2" icon={<UserAddOutlined/>}>
               <Link to="/users">Nutzer erstellen</Link>
@@ -70,7 +71,7 @@ const SiteLayout = () => {
               <Link to="/devices">Geräte zuweisen</Link>
             </Menu.Item>
             <Menu.Item key="4" icon={<LogoutOutlined/>} onClick={logout}>
-              Logout
+              <Link to="/">Logout</Link>
             </Menu.Item>
           </Menu>
         </Sider>
@@ -81,7 +82,7 @@ const SiteLayout = () => {
               onClick: toggle
             })}
             <Avatar size="small"
-                    icon={<UserOutlined/>}/> {user.preferred_username}, {isAdmin(user) ? 'Administrator' : 'Mieter'}
+                    icon={<UserOutlined/>}/> {user.preferred_username}, {getRole(user)}
           </Header>
           <Content
             className="site-layout-background"

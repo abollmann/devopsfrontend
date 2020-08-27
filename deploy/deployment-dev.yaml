@@ -7,11 +7,11 @@ spec:
   selector:
     app: heaterbilling
   ports:
-  - port: 3000
-    targetPort: 3000
-    name: heaterbilling
-    protocol: TCP
-  type: ClusterIP
+    - name: http
+        port: 80
+        protocol: TCP
+        targetPort: 80
+  type: NodePort
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -34,20 +34,5 @@ spec:
       containers:
         - name: heaterbilling
           image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: heaterbilling-ingress
-  namespace: dev
-spec:
-  rules:
-    - host: dev.api.116.203.242.235.xip.io
-      http:
-        paths:
-          - backend:
-              serviceName: heaterbilling
-              servicePort: 3000
-  tls:
-    - hosts:
-        - 116.203.242.235.xip.io
+        ports:
+          - containerPort: 80

@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react'
-import {Form, Button, Select} from 'antd'
+import {Form, Button, Select, Divider, Alert, Popconfirm} from 'antd'
 import {useDispatch, useSelector} from 'react-redux'
+import { QuestionCircleOutlined } from '@ant-design/icons'
 import {getAllDevices} from '../redux/devices/reducer'
 import {getAllTenants} from '../redux/tenants/reducer'
 import {getAllBuildings} from '../redux/buildings/reducer'
@@ -27,6 +28,8 @@ const tailLayout = {
 
 const TenantDevicesForm = () => {
   const formRef = useRef(null)
+  const [successMessage, setSuccessMessage] = useState(null)
+  const [errorMessage, setErrorMessage] = useState(null)
   const [eligibleDevices, setEligibleDevices] = useState([])
   const [selectedTenant, setSelectedTenant] = useState(null)
   const [selectedBuilding, setSelectedBuilding] = useState(null)
@@ -37,7 +40,6 @@ const TenantDevicesForm = () => {
   const tenants = useSelector(state => state.tenants.data)
   const buildings = useSelector(state => state.buildings.data)
 
-  console.log(devices)
 
   useEffect(() => {
     async function collectInitialData() {
@@ -51,6 +53,27 @@ const TenantDevicesForm = () => {
     collectInitialData()
   }, [dispatch, keycloak])
 
+
+  const getHomeBuilding = () => {
+    if (selectedTenant === null)
+      return null
+    const tenant = tenants.find(t => t['_id'] === selectedTenant)
+    if (tenant === null || tenant.home_building === undefined || tenant.home_building === null)
+      return null
+    return tenant.home_building
+  }
+
+  const buildingOptions = () => {
+    if (selectedTenant === null)
+      return null
+    const homeBuilding = getHomeBuilding()
+    return buildings
+      .filter(building => homeBuilding === null || building['_id'] === homeBuilding)
+      .map(building => {
+        return <Option key={building['_id']}
+                       value={building['_id']}>{concatAddress(building)}</Option>
+      })
+  }
 
   const handleSelectTenant = tenant => {
     setSelectedTenant(tenant)
@@ -71,15 +94,52 @@ const TenantDevicesForm = () => {
     setSelectedBuilding(null)
     setEligibleDevices([])
   }
-  // buildings: "AB1"
-  // devices: (2) ["5f45241548319e8c6c5da6ee", "5f45241548319e8c6c5da6ed"]
-  // tenant: "5f4526da381e57c07964b9f7"
+
   const onFinish = data => {
-    tenantService.distributeDevices(keycloak.token, data).then(console.log).catch(console.log)
+    tenantService.distributeDevices(keycloak.token, data)
+      .then(() => setSuccessMessage('Geräte erfolgreich hinzugefügt'))
+      .catch(() => setErrorMessage('Geräte konnten nicht hinzugefügt werden'))
+    onReset()
+  }
+
+  const removeDevices = () => {
+    tenantService.distributeDevices(keycloak.token, {tenant_id: selectedTenant, device_ids: []})
+      .then(() => setSuccessMessage('Geräte erfolgreich entfernt'))
+      .catch(() => setErrorMessage('Geräte konnten nicht enternt werden'))
+    onReset()
+  }
+
+  const onReset = () => {
+    formRef.current.resetFields()
+    handleDeselectTenant()
   }
 
   return (
-    <Form {...layout} ref={formRef} name="control-ref" onFinish={onFinish}>
+    <Form
+      {...layout}
+      ref={formRef}
+      name="control-ref"
+      onFinish={onFinish}>
+      {successMessage &&
+      <Alert
+        message={successMessage}
+        type="success"
+        showIcon
+        closable
+        onClose={() => setSuccessMessage(null)}
+      />
+      }
+      {errorMessage &&
+      <Alert
+        message={errorMessage}
+        description="Serververbindung bitte überprüfen"
+        type="error"
+        showIcon
+        closable
+        onClose={() => setErrorMessage(null)}
+      />
+      }
+      <Divider orientation="center">Geräte zuweisen</Divider>
       <Form.Item
         name="tenant_id"
         label="Mieter"
@@ -93,13 +153,13 @@ const TenantDevicesForm = () => {
           placeholder="Mieter auswählen"
           onSelect={handleSelectTenant}
           onDeselect={handleDeselectTenant}
+          onClear={handleDeselectTenant}
           allowClear
         >
           {tenants.map(tenant => <Option key={tenant['_id']}
                                          value={tenant['_id']}>{tenant.first_name} {tenant.last_name}</Option>)}
         </Select>
       </Form.Item>
-
       <Form.Item
         name="buildings"
         label="Gebäude"
@@ -113,11 +173,10 @@ const TenantDevicesForm = () => {
           placeholder={selectedTenant !== null ? "Gebäude auswählen" : "Bitte erst einen Mieter auswählen"}
           onSelect={handleSelectBuilding}
           onDeselect={handleDeselectBuilding}
+          onClear={handleDeselectBuilding}
           allowClear
         >
-          {selectedTenant === null ? [] :
-            buildings.map(building => <Option key={building['_id']}
-                                              value={building['_id']}>{concatAddress(building)}</Option>)}
+          {buildingOptions()}
         </Select>
       </Form.Item>
 
@@ -135,18 +194,24 @@ const TenantDevicesForm = () => {
           mode="multiple"
           allowClear
         >
-          {eligibleDevices.map(device => <Option key={device['_id']}
-                                                 value={device['_id']}>{device.building_id}_{device.room_nr}</Option>)}
+          {selectedBuilding !== null &&
+          eligibleDevices.map(device => <Option key={device['_id']}
+                                                value={device['_id']}>{device.building_id}_{device.room_nr}</Option>)}
         </Select>
       </Form.Item>
 
       <Form.Item {...tailLayout}>
         <Button type="primary" htmlType="submit">
-          Submit
+          Bestätigen
         </Button>
-        <Button htmlType="button">
-          Reset
+        <Button htmlType="button" onClick={onReset}>
+          Zurücksetzen
         </Button>
+        <Popconfirm title="ALLE zugewiesenen Geräte entfernen" okText="Ja" cancelText="Nein" onConfirm={removeDevices}>
+          <Button type="danger" disabled={selectedTenant === null}>
+            Geräte entfernen
+          </Button>
+        </Popconfirm>
       </Form.Item>
     </Form>
   )
