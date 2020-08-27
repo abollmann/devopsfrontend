@@ -114,7 +114,7 @@
       <workItem from="1598357260743" duration="16010000" />
       <workItem from="1598424171596" duration="3827000" />
       <workItem from="1598459000568" duration="4005000" />
-      <workItem from="1598527447591" duration="11036000" />
+      <workItem from="1598527447591" duration="11866000" />
     </task>
     <task id="LOCAL-00001" summary="Update .gitignore">
       <created>1598207879575</created>
@@ -137,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598541661808</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update config">
+      <created>1598544979353</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1598544979353</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,7 +157,8 @@
     <MESSAGE value="Update .gitignore" />
     <MESSAGE value="Add deployment files" />
     <MESSAGE value="Add deployment config" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add deployment config" />
+    <MESSAGE value="Update config" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update config" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1126" y="592" key="#ESLint" timestamp="1598208178041">
@@ -161,10 +169,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598381977824" />
-    <state x="816" y="268" key="CommitChangelistDialog2" timestamp="1598541661177">
+    <state x="816" y="268" key="CommitChangelistDialog2" timestamp="1598544978846">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="816" y="268" key="CommitChangelistDialog2/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598541661177" />
+    <state x="816" y="268" key="CommitChangelistDialog2/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598544978846" />
     <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1598119937374">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -237,10 +245,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="811" y="345" key="SettingsEditor/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598207802291" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1598541663421">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1598544980698">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598541663421" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598544980698" />
     <state x="963" y="411" width="634" height="578" key="find.popup" timestamp="1598368235256">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
