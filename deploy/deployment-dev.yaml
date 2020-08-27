@@ -8,9 +8,9 @@ spec:
     app: heaterbilling
   ports:
     - name: http
-        port: 80
-        protocol: TCP
-        targetPort: 80
+      port: 80
+      protocol: TCP
+      targetPort: 80
   type: NodePort
 ---
 apiVersion: apps/v1

@@ -1,33 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fea6677c-566f-4b1e-8b24-ab9cfcf673e4" name="Default Changelist" comment="Update .gitignore">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deploy/deployment-dev.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deploy/deployment-prod.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deploy/deployment-stag.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Tenants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/buildings/actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/buildings/reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/tenants/actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/tenants/reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/devopsfrontend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/devopsfrontend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="fea6677c-566f-4b1e-8b24-ab9cfcf673e4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Devices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Devices.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TenantDevicesForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TenantDevicesForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TenantForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TenantForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/helper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/SiteLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/SiteLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/devices/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/devices/reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/devices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/devices.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/tenants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/tenants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy/deployment-dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/deployment-dev.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy/deployment-prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/deployment-prod.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy/deployment-stag.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/deployment-stag.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +51,8 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-    <property name="ts.external.directory.path" value="C:\Users\Aron\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\202.6397.88\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="C:\Users\Aron\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\202.6948.73\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -91,6 +70,16 @@
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="npm start" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -101,6 +90,11 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -117,7 +111,10 @@
       <workItem from="1598178873969" duration="20861000" />
       <workItem from="1598207759475" duration="564000" />
       <workItem from="1598297019894" duration="1998000" />
-      <workItem from="1598357260743" duration="14607000" />
+      <workItem from="1598357260743" duration="16010000" />
+      <workItem from="1598424171596" duration="3827000" />
+      <workItem from="1598459000568" duration="4005000" />
+      <workItem from="1598527447591" duration="11036000" />
     </task>
     <task id="LOCAL-00001" summary="Update .gitignore">
       <created>1598207879575</created>
@@ -126,7 +123,21 @@
       <option name="project" value="LOCAL" />
       <updated>1598207879575</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add deployment files">
+      <created>1598382079479</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1598382079479</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add deployment config">
+      <created>1598541661808</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1598541661808</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,7 +148,9 @@
       <path value="$PROJECT_DIR$/../.." />
     </ignored-roots>
     <MESSAGE value="Update .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update .gitignore" />
+    <MESSAGE value="Add deployment files" />
+    <MESSAGE value="Add deployment config" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add deployment config" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1126" y="592" key="#ESLint" timestamp="1598208178041">
@@ -148,30 +161,30 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598381977824" />
-    <state x="816" y="268" key="CommitChangelistDialog2" timestamp="1598381965129">
+    <state x="816" y="268" key="CommitChangelistDialog2" timestamp="1598541661177">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="816" y="268" key="CommitChangelistDialog2/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598381965129" />
+    <state x="816" y="268" key="CommitChangelistDialog2/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598541661177" />
     <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1598119937374">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598119937374" />
-    <state width="2540" height="400" key="GridCell.Tab.0.bottom" timestamp="1598381752246">
+    <state width="2540" height="400" key="GridCell.Tab.0.bottom" timestamp="1598544648399">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2540" height="400" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598381752246" />
-    <state width="2540" height="400" key="GridCell.Tab.0.center" timestamp="1598381752245">
+    <state width="2540" height="400" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598544648399" />
+    <state width="2540" height="400" key="GridCell.Tab.0.center" timestamp="1598544648399">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2540" height="400" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598381752245" />
-    <state width="2540" height="400" key="GridCell.Tab.0.left" timestamp="1598381752245">
+    <state width="2540" height="400" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598544648399" />
+    <state width="2540" height="400" key="GridCell.Tab.0.left" timestamp="1598544648399">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2540" height="400" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598381752245" />
-    <state width="2540" height="400" key="GridCell.Tab.0.right" timestamp="1598381752245">
+    <state width="2540" height="400" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598544648399" />
+    <state width="2540" height="400" key="GridCell.Tab.0.right" timestamp="1598544648399">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2540" height="400" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598381752245" />
+    <state width="2540" height="400" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598544648399" />
     <state width="2540" height="492" key="GridCell.Tab.1.bottom" timestamp="1597842448319">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -224,10 +237,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="811" y="345" key="SettingsEditor/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598207802291" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1598207915511">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1598541663421">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598207915511" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598541663421" />
     <state x="963" y="411" width="634" height="578" key="find.popup" timestamp="1598368235256">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
