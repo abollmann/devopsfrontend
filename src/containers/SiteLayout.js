@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import {Layout, Menu, Avatar} from 'antd'
 import {
   DatabaseOutlined,
@@ -11,22 +11,19 @@ import {
 } from '@ant-design/icons'
 import './SiteLayout.css'
 import {useDispatch, useSelector} from 'react-redux'
-import Devices from '../components/Devices'
 import {authActions} from '../redux/auth/actions'
 import {getRole} from '../components/helper'
-import {getAllDevices} from '../redux/devices/reducer'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
-  Redirect
 } from 'react-router-dom'
 import TenantForm from '../components/TenantForm'
 import TenantDevicesForm from '../components/TenantDevicesForm'
 import Tenants from '../components/Tenants';
 
-const {Header, Sider, Content} = Layout
+const {Header, Sider, Content, Footer} = Layout
 
 const SiteLayout = () => {
   const dispatch = useDispatch()
@@ -39,20 +36,9 @@ const SiteLayout = () => {
     dispatch(authActions.logout())
   }
 
-  useEffect(() => {
-    async function collectInitialData() {
-      if (keycloak.token !== undefined) {
-        dispatch(getAllDevices(keycloak.token))
-      }
-    }
-
-    collectInitialData()
-  }, [dispatch, keycloak])
-
   if (user === null) {
     return null
   }
-
 
   return (
     <Router>
@@ -89,7 +75,7 @@ const SiteLayout = () => {
             style={{
               margin: '24px 16px',
               padding: 24,
-              minHeight: 280,
+              minHeight: '100vh',
             }}
           >
             <Switch>
@@ -104,7 +90,9 @@ const SiteLayout = () => {
               </Route>
             </Switch>
           </Content>
+          <Footer style={{ textAlign: 'center' }}>@DevOps SS2020</Footer>
         </Layout>
+        <Sider/>
       </Layout>
     </Router>
   )

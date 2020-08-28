@@ -36,3 +36,6 @@ spec:
           image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
           ports:
             - containerPort: 80
+          env:
+            - name: NAMESPACE
+              value: dev

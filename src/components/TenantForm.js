@@ -2,11 +2,8 @@ import React, {useEffect, useRef, useState} from 'react'
 import {Row, Col, Form, Input, Button, Select, Divider, Alert} from 'antd'
 import tenantService from '../services/tenants'
 import {useDispatch, useSelector} from 'react-redux'
-import {getAllDevices} from '../redux/devices/reducer';
-import {getAllTenants} from '../redux/tenants/reducer';
-import {getAllBuildings} from '../redux/buildings/reducer';
-import {concatAddress} from './helper';
-import {bindActionCreators} from 'redux';
+import {getAllBuildings} from '../redux/buildings/reducer'
+import {concatAddress} from './helper'
 
 const {Option} = Select
 const layout = {
@@ -16,12 +13,17 @@ const layout = {
   wrapperCol: {
     span: 16,
   },
+  type: 'flex',
+  justify: 'center',
 }
 const tailLayout = {
   wrapperCol: {
     offset: 8,
     span: 16,
   },
+  type: 'flex',
+  justify: 'center',
+  align: 'middle'
 }
 
 const TenantForm = () => {

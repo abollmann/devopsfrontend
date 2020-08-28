@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react'
 import {Form, Button, Select, Divider, Alert, Popconfirm} from 'antd'
 import {useDispatch, useSelector} from 'react-redux'
-import { QuestionCircleOutlined } from '@ant-design/icons'
+import {QuestionCircleOutlined} from '@ant-design/icons'
 import {getAllDevices} from '../redux/devices/reducer'
 import {getAllTenants} from '../redux/tenants/reducer'
 import {getAllBuildings} from '../redux/buildings/reducer'
@@ -17,6 +17,9 @@ const layout = {
   wrapperCol: {
     span: 16,
   },
+  type: 'flex',
+  justify: 'center',
+  align: 'middle'
 }
 
 const tailLayout = {
@@ -54,6 +57,7 @@ const TenantDevicesForm = () => {
   }, [dispatch, keycloak])
 
 
+  // DATA
   const getHomeBuilding = () => {
     if (selectedTenant === null)
       return null
@@ -75,6 +79,19 @@ const TenantDevicesForm = () => {
       })
   }
 
+  const tenantOptions = () => {
+    return tenants.map(tenant => <Option key={tenant['_id']}
+                                  value={tenant['_id']}>{tenant.first_name} {tenant.last_name}</Option>)
+  }
+
+  const deviceOptions = () => {
+    if (selectedBuilding === null)
+      return null
+    return eligibleDevices.map(device => <Option key={device['_id']}
+                                          value={device['_id']}>{device.building_id}_{device.room_nr}</Option>)
+  }
+
+  // HANDLERS
   const handleSelectTenant = tenant => {
     setSelectedTenant(tenant)
   }
@@ -156,8 +173,7 @@ const TenantDevicesForm = () => {
           onClear={handleDeselectTenant}
           allowClear
         >
-          {tenants.map(tenant => <Option key={tenant['_id']}
-                                         value={tenant['_id']}>{tenant.first_name} {tenant.last_name}</Option>)}
+          {tenantOptions()}
         </Select>
       </Form.Item>
       <Form.Item
@@ -194,9 +210,7 @@ const TenantDevicesForm = () => {
           mode="multiple"
           allowClear
         >
-          {selectedBuilding !== null &&
-          eligibleDevices.map(device => <Option key={device['_id']}
-                                                value={device['_id']}>{device.building_id}_{device.room_nr}</Option>)}
+          {deviceOptions()}
         </Select>
       </Form.Item>
 
