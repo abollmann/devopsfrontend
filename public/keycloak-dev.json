@@ -2,7 +2,7 @@
   "realm": "apartments",
   "auth-server-url": "https://116.203.242.235.xip.io/auth/",
   "ssl-required": "external",
-  "resource": "api-gateway-login-local",
+  "resource": "api-gateway-login",
   "public-client": true,
   "verify-token-audience": true,
   "use-resource-role-mappings": true,
