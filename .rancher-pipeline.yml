@@ -6,6 +6,8 @@ stages:
       buildContext: .
       tag: awcloud/heaterbilling:${CICD_EXECUTION_SEQUENCE}
       registry: 127.0.0.1:34923
+  env:
+    PLUGIN_DEBUG: "true"
 - name: Deploy
   steps:
   - applyYamlConfig:
