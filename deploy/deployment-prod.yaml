@@ -37,6 +37,6 @@ spec:
           ports:
             - containerPort: 80
           env:
-            - name: NAMESPACE
+            - name: REACT_APP_NAMESPACE
               value: prod
 
