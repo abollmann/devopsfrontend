@@ -16,4 +16,9 @@ const distributeDevices = async (token, body) => {
   return response.data
 }
 
-export default {getAll, create, distributeDevices}
+const deleteTenant = async (token, tenant_id) => {
+  const response = await api.delete(`tenants/${tenant_id}`, {headers: { Authorization: `Bearer ${token}` }})
+  return response.status
+}
+
+export default {getAll, create, distributeDevices, deleteTenant}

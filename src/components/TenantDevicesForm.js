@@ -1,7 +1,8 @@
 import React, {useEffect, useRef, useState} from 'react'
 import {Form, Button, Select, Divider, Alert, Popconfirm} from 'antd'
+import { useHistory } from 'react-router'
 import {useDispatch, useSelector} from 'react-redux'
-import {QuestionCircleOutlined} from '@ant-design/icons'
+import {useLocation} from 'react-router-dom'
 import {getAllDevices} from '../redux/devices/reducer'
 import {getAllTenants} from '../redux/tenants/reducer'
 import {getAllBuildings} from '../redux/buildings/reducer'
@@ -12,20 +13,19 @@ const {Option} = Select
 
 const layout = {
   labelCol: {
-    span: 8,
+    span: 4,
   },
   wrapperCol: {
-    span: 16,
+    span: 12,
   },
   type: 'flex',
   justify: 'center',
-  align: 'middle'
 }
 
 const tailLayout = {
   wrapperCol: {
-    offset: 8,
-    span: 16,
+    offset: 4,
+    span: 12,
   },
 }
 
@@ -43,6 +43,9 @@ const TenantDevicesForm = () => {
   const tenants = useSelector(state => state.tenants.data)
   const buildings = useSelector(state => state.buildings.data)
 
+  const location = useLocation()
+  const history = useHistory()
+
 
   useEffect(() => {
     async function collectInitialData() {
@@ -51,10 +54,14 @@ const TenantDevicesForm = () => {
         dispatch(getAllTenants(keycloak.token))
         dispatch(getAllBuildings(keycloak.token))
       }
+      if (location.state !== undefined) {
+        setSelectedTenant(location.state.tenant)
+      }
     }
 
     collectInitialData()
-  }, [dispatch, keycloak])
+
+  }, [dispatch, keycloak, location])
 
 
   // DATA
@@ -81,14 +88,14 @@ const TenantDevicesForm = () => {
 
   const tenantOptions = () => {
     return tenants.map(tenant => <Option key={tenant['_id']}
-                                  value={tenant['_id']}>{tenant.first_name} {tenant.last_name}</Option>)
+                                         value={tenant['_id']}>{tenant.first_name} {tenant.last_name}</Option>)
   }
 
   const deviceOptions = () => {
     if (selectedBuilding === null)
       return null
     return eligibleDevices.map(device => <Option key={device['_id']}
-                                          value={device['_id']}>{device.building_id}_{device.room_nr}</Option>)
+                                                 value={device['_id']}>{device.building_id}_{device.room_nr}</Option>)
   }
 
   // HANDLERS
@@ -114,14 +121,18 @@ const TenantDevicesForm = () => {
 
   const onFinish = data => {
     tenantService.distributeDevices(keycloak.token, data)
-      .then(() => setSuccessMessage('Geräte erfolgreich hinzugefügt'))
+      .then(() => {
+        setSuccessMessage('Geräte erfolgreich hinzugefügt')
+      })
       .catch(() => setErrorMessage('Geräte konnten nicht hinzugefügt werden'))
     onReset()
   }
 
   const removeDevices = () => {
     tenantService.distributeDevices(keycloak.token, {tenant_id: selectedTenant, device_ids: []})
-      .then(() => setSuccessMessage('Geräte erfolgreich entfernt'))
+      .then(() => {
+        setSuccessMessage('Geräte erfolgreich entfernt')
+      })
       .catch(() => setErrorMessage('Geräte konnten nicht enternt werden'))
     onReset()
   }
@@ -129,6 +140,7 @@ const TenantDevicesForm = () => {
   const onReset = () => {
     formRef.current.resetFields()
     handleDeselectTenant()
+    history.push(0)
   }
 
   return (
@@ -136,7 +148,8 @@ const TenantDevicesForm = () => {
       {...layout}
       ref={formRef}
       name="control-ref"
-      onFinish={onFinish}>
+      onFinish={onFinish}
+      initialValues={{'tenant_id': selectedTenant}}>
       {successMessage &&
       <Alert
         message={successMessage}
@@ -186,7 +199,7 @@ const TenantDevicesForm = () => {
         ]}
       >
         <Select
-          placeholder={selectedTenant !== null ? "Gebäude auswählen" : "Bitte erst einen Mieter auswählen"}
+          placeholder="Gebäude auswählen"
           onSelect={handleSelectBuilding}
           onDeselect={handleDeselectBuilding}
           onClear={handleDeselectBuilding}

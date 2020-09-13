@@ -5,4 +5,9 @@ const getAll = async (token) => {
   return response.data
 }
 
-export default {getAll}
+const resetMeterValue = async (token, data) => {
+  const response = await api.put('devices', data, {headers: {Authorization: `Bearer ${token}`}})
+  return response.status
+}
+
+export default {getAll, resetMeterValue}

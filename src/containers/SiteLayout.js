@@ -83,7 +83,7 @@ const SiteLayout = () => {
                 <TenantForm />
               </Route>
               <Route path="/devices">
-                <TenantDevicesForm />
+                <TenantDevicesForm/>
               </Route>
               <Route path="/">
                 <Tenants />

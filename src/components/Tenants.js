@@ -3,54 +3,12 @@ import React, {useEffect} from 'react'
 import { Table, Button} from 'antd'
 import {getAllTenants} from '../redux/tenants/reducer'
 import {concatAddress} from './helper'
+import { useHistory } from 'react-router-dom'
+import tenantService from '../services/tenants'
+import deviceService from '../services/devices'
 
-const ButtonGroup = Button.Group;
-
-const columns = [
-  {
-    title: 'Name',
-    dataIndex: 'name',
-    defaultSortOrder: 'descend',
-    sorter: (a, b) => a.name - b.name,
-    sortDirections: ['descend', 'ascend'],
-  },
-  {
-    title: 'Mailadresse',
-    dataIndex: 'email',
-    sorter: (a, b) => a.email - b.email,
-    sortDirections: ['descend', 'ascend'],
-  },
-  {
-    title: 'Wohnsitz',
-    dataIndex: 'home',
-    sorter: (a, b) => a.email - b.email,
-    sortDirections: ['descend', 'ascend'],
-  },
-  {
-    title: 'Geräte',
-    dataIndex: 'devices',
-    sorter: (a, b) => a.devices - b.devices,
-    sortDirections: ['descend', 'ascend'],
-  },
-  {
-    title: 'Momentane Kosten',
-    dataIndex: 'bill',
-    sorter: (a, b) => a.meter_value - b.meter_value,
-    sortDirections: ['descend', 'ascend'],
-  },
-  {
-    title: 'Aktionen',
-    dataIndex: '',
-    key: 'x',
-    render: () => (
-      <ButtonGroup>
-        <Button>Bearbeiten</Button>
-        <Button>Geräte</Button>
-      </ButtonGroup>
-    ),
-  }
-]
-
+const ButtonGroup = Button.Group
+const MAGIC_NUMBER = 0.005
 
 const formatTenantData = (tenants) => {
   return tenants.map(tenant => {
@@ -59,7 +17,7 @@ const formatTenantData = (tenants) => {
       key: tenant['_id'],
       devices: tenant.devices.length,
       name: `${tenant.first_name} ${tenant.last_name}`,
-      bill: `${tenant.bill}€`,
+      total_meter_value: `${tenant.total_meter_value * MAGIC_NUMBER}€`,
       home: concatAddress(tenant.home)
     }
   })
@@ -70,6 +28,7 @@ const Tenants = () => {
   const dispatch = useDispatch()
   const keycloak = useSelector(state => state.auth.keycloak)
   const tenants = useSelector(state => state.tenants.data)
+  const history = useHistory()
 
   useEffect(() => {
     async function collectInitialData() {
@@ -81,7 +40,52 @@ const Tenants = () => {
     collectInitialData()
   }, [dispatch, keycloak])
 
-  console.log(tenants)
+  const columns = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      defaultSortOrder: 'descend',
+      sorter: (a, b) => a.name - b.name,
+      sortDirections: ['descend', 'ascend'],
+    },
+    {
+      title: 'Mailadresse',
+      dataIndex: 'email',
+      sorter: (a, b) => a.email - b.email,
+      sortDirections: ['descend', 'ascend'],
+    },
+    {
+      title: 'Wohnsitz',
+      dataIndex: 'home',
+      sorter: (a, b) => a.email - b.email,
+      sortDirections: ['descend', 'ascend'],
+    },
+    {
+      title: 'Geräte',
+      dataIndex: 'devices',
+      sorter: (a, b) => a.devices - b.devices,
+      sortDirections: ['descend', 'ascend'],
+    },
+    {
+      title: 'Momentane Kosten',
+      dataIndex: 'total_meter_value',
+      sorter: (a, b) => a.total_meter_value - b.total_meter_value,
+      sortDirections: ['descend', 'ascend'],
+    },
+    {
+      title: 'Aktionen',
+      dataIndex: '_id',
+      key: '_id',
+      render: id => (
+        <ButtonGroup>
+          <Button onClick={() => history.push({pathname: '/devices', state: {tenant: id}})}>Geräte</Button>
+          <Button onClick={() => deviceService.resetMeterValue(keycloak.token, {tenant_id: id})}>Abrechnen</Button>
+          <Button type="danger" onClick={() => tenantService.deleteTenant(keycloak.token, id)}>Löschen</Button>
+        </ButtonGroup>
+      ),
+    }
+  ]
+
   const options = {
     bordered: true,
     pagination: { position: 'bottom' },
