@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import {Layout, Menu, Avatar} from 'antd'
 import {
   DatabaseOutlined,
@@ -11,20 +11,19 @@ import {
 } from '@ant-design/icons'
 import './SiteLayout.css'
 import {useDispatch, useSelector} from 'react-redux'
-import Devices from '../components/Devices'
 import {authActions} from '../redux/auth/actions'
-import {isAdmin} from '../components/helper'
-import {getAllDevices} from '../redux/devices/reducer'
+import {getRole} from '../components/helper'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
 } from 'react-router-dom'
 import TenantForm from '../components/TenantForm'
 import TenantDevicesForm from '../components/TenantDevicesForm'
+import Tenants from '../components/Tenants';
 
-const {Header, Sider, Content} = Layout
+const {Header, Sider, Content, Footer} = Layout
 
 const SiteLayout = () => {
   const dispatch = useDispatch()
@@ -33,24 +32,13 @@ const SiteLayout = () => {
   const toggle = () => setCollapsed(!collapsed)
 
   const logout = () => {
-    keycloak.logout()
     dispatch(authActions.logout())
+    keycloak.logout()
   }
-
-  useEffect(() => {
-    async function collectInitialData() {
-      if (keycloak.token !== undefined) {
-        dispatch(getAllDevices(keycloak.token))
-      }
-    }
-
-    collectInitialData()
-  }, [dispatch, keycloak])
 
   if (user === null) {
     return null
   }
-
 
   return (
     <Router>
@@ -60,7 +48,7 @@ const SiteLayout = () => {
           </div>
           <Menu theme="dark" mode="inline">
             <Menu.Item key="1" icon={<DatabaseOutlined/>}>
-              <Link to="/">Gerätedaten</Link>
+              <Link to="/">Mieterdaten</Link>
             </Menu.Item>
             <Menu.Item key="2" icon={<UserAddOutlined/>}>
               <Link to="/users">Nutzer erstellen</Link>
@@ -69,7 +57,7 @@ const SiteLayout = () => {
               <Link to="/devices">Geräte zuweisen</Link>
             </Menu.Item>
             <Menu.Item key="4" icon={<LogoutOutlined/>} onClick={logout}>
-              Logout
+              <Link to="/">Logout</Link>
             </Menu.Item>
           </Menu>
         </Sider>
@@ -80,14 +68,14 @@ const SiteLayout = () => {
               onClick: toggle
             })}
             <Avatar size="small"
-                    icon={<UserOutlined/>}/> {user.preferred_username}, {isAdmin(user) ? 'Administrator' : 'Mieter'}
+                    icon={<UserOutlined/>}/> {user.preferred_username}, {getRole(user)}
           </Header>
           <Content
             className="site-layout-background"
             style={{
               margin: '24px 16px',
               padding: 24,
-              minHeight: 280,
+              minHeight: '100vh',
             }}
           >
             <Switch>
@@ -95,14 +83,16 @@ const SiteLayout = () => {
                 <TenantForm />
               </Route>
               <Route path="/devices">
-                <TenantDevicesForm />
+                <TenantDevicesForm/>
               </Route>
               <Route path="/">
-                <Devices />
+                <Tenants />
               </Route>
             </Switch>
           </Content>
+          <Footer style={{ textAlign: 'center' }}>@DevOps SS2020</Footer>
         </Layout>
+        <Sider/>
       </Layout>
     </Router>
   )

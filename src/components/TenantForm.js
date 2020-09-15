@@ -1,9 +1,11 @@
-import React, {useRef, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import {Row, Col, Form, Input, Button, Select, Divider, Alert} from 'antd'
 import tenantService from '../services/tenants'
-import {useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
+import {getAllBuildings} from '../redux/buildings/reducer'
+import {concatAddress} from './helper'
 
-const {Option} = Select;
+const {Option} = Select
 const layout = {
   labelCol: {
     span: 8,
@@ -11,19 +13,38 @@ const layout = {
   wrapperCol: {
     span: 16,
   },
-};
+  type: 'flex',
+  justify: 'center',
+}
 const tailLayout = {
   wrapperCol: {
     offset: 8,
     span: 16,
   },
-};
+  type: 'flex',
+  justify: 'center',
+  align: 'middle'
+}
 
 const TenantForm = () => {
   const [successMessage, setSuccessMessage] = useState(false)
   const [errorMessage, setErrorMessage] = useState(false)
   const formRef = useRef(null)
   const keycloak = useSelector(state => state.auth.keycloak)
+
+  const dispatch = useDispatch()
+  const buildings = useSelector(state => state.buildings.data)
+  console.log(buildings)
+  useEffect(() => {
+    async function collectInitialData() {
+      if (keycloak !== null) {
+        dispatch(getAllBuildings(keycloak.token))
+      }
+    }
+
+    collectInitialData()
+  }, [dispatch, keycloak])
+
 
   const onFinish = values => {
     tenantService.create(keycloak.token, values)
@@ -32,14 +53,14 @@ const TenantForm = () => {
   }
 
   const onReset = () => {
-    formRef.current.resetFields();
+    formRef.current.resetFields()
   }
 
   return (
     <Form {...layout} ref={formRef} name="control-ref" onFinish={onFinish}>
       {successMessage &&
       <Alert
-        message="Mieter erstellt Tips"
+        message="Mieter erstellt"
         type="success"
         showIcon
         closable
@@ -49,14 +70,14 @@ const TenantForm = () => {
       {errorMessage &&
       <Alert
         message="Mieter konnte nicht erstellt werden"
-        description="Serververbindung und Mailadresse prüfen"
+        description="Serververbindung oder Mailadresse nicht einzigartig"
         type="error"
         showIcon
         closable
         onClose={() => setErrorMessage(false)}
       />
       }
-      <Divider orientation="center">Mieterdaten</Divider>
+      <Divider orientation="center">Persönliche Daten</Divider>
       <Row gutter={24}>
         <Col span={12}>
           <Form.Item
@@ -109,7 +130,7 @@ const TenantForm = () => {
             ]}
           >
             <Select
-              placeholder="Bitte auswählen"
+              placeholder="Geschlecht auswählen"
               allowClear
             >
               <Option value="male">männlich</Option>
@@ -118,7 +139,26 @@ const TenantForm = () => {
             </Select>
           </Form.Item>
         </Col>
-        <Col span={24}>
+        <Col span={12}>
+          <Form.Item
+            name="home_building"
+            label="Gebäude"
+            rules={[
+              {
+                required: true,
+              },
+            ]}
+          >
+            <Select
+              placeholder={"Wohnsitz auswählen"}
+              allowClear
+            >
+              {buildings.map(building => <Option key={building['_id']}
+                                                 value={building['_id']}>{concatAddress(building)}</Option>)}
+            </Select>
+          </Form.Item>
+        </Col>
+        <Col span={12}>
           <Form.Item
             noStyle
             shouldUpdate={(prevValues, currentValues) => prevValues.gender !== currentValues.gender}

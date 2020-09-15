@@ -2,83 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fea6677c-566f-4b1e-8b24-ab9cfcf673e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/controllers/blogs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/middleware/error_handlers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/models/blog.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/models/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/tests/blog_api.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/tests/common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/tests/list_helper.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/utils/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/utils/list_helper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part4/bloglist/utils/logging.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/.eslintignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/.eslintrc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/public/logo192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/public/logo512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/components/Blog.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/components/Blog.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/components/BlogDetails.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/components/BlogForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/components/Login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/components/Message.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/components/Togglealbe.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/services/blogs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/services/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../part5/bloglist-frontend/src/setupTests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/keycloak.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/logo192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/logo512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Devices.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TenantDevicesForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TenantForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/helper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/SiteLayout.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/SiteLayout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/auth/actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/auth/reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/devices/actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/devices/reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/reducers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/serviceWorker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/buildings.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/devices.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/tenants.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/setupTests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../part2/phonebook/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../part2/phonebook/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy/deployment-prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/deployment-prod.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy/deployment-stag.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/deployment-stag.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +19,12 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1gHga7NOYC6b6Oot40okOzU7kqk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -106,29 +37,46 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="ts.external.directory.path" value="C:\Users\Aron\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\202.6397.88\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="ts.external.directory.path" value="C:\Users\Aron\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\202.6948.73\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Aron\Desktop\fullstack\part6\devopsfrontend\public" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Aron\Desktop\fullstack\part6\devopsfrontend\src" />
       <recent name="C:\Users\Aron\Desktop\fullstack\part6\devopsfrontend\src\redux" />
       <recent name="C:\Users\Aron\Desktop\fullstack\part6\devopsfrontend\public" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Aron\Desktop\fullstack\part6\devopsfrontend" />
+      <recent name="C:\Users\Aron\Desktop\fullstack\part6\devopsfrontend\src\redux\buildings" />
+      <recent name="C:\Users\Aron\Desktop\fullstack\part6\devopsfrontend\public" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
     <configuration name="npm start" type="js.build_tools.npm">
@@ -141,6 +89,16 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Debug Application" />
+      <item itemvalue="npm.npm start" />
+      <item itemvalue="npm.build" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -155,37 +113,189 @@
       <workItem from="1597839598260" duration="14850000" />
       <workItem from="1598118755863" duration="1671000" />
       <workItem from="1598178873969" duration="20861000" />
+      <workItem from="1598207759475" duration="564000" />
+      <workItem from="1598297019894" duration="1998000" />
+      <workItem from="1598357260743" duration="16010000" />
+      <workItem from="1598424171596" duration="3827000" />
+      <workItem from="1598459000568" duration="4005000" />
+      <workItem from="1598527447591" duration="12324000" />
+      <workItem from="1598604798331" duration="4890000" />
+      <workItem from="1599739472418" duration="5511000" />
+      <workItem from="1599762162831" duration="1763000" />
+      <workItem from="1599817031290" duration="3418000" />
+      <workItem from="1599991363504" duration="10936000" />
+      <workItem from="1600170757576" duration="11940000" />
     </task>
+    <task id="LOCAL-00001" summary="Update .gitignore">
+      <created>1598207879575</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1598207879575</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add deployment files">
+      <created>1598382079479</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1598382079479</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add deployment config">
+      <created>1598541661808</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1598541661808</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update config">
+      <created>1598544979353</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1598544979353</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Update config">
+      <created>1598546466185</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1598546466185</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update config">
+      <created>1598615238645</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1598615238645</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Update config 2">
+      <created>1599741486533</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1599741486533</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add debug">
+      <created>1599741814181</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1599741814181</updated>
+    </task>
+    <task id="LOCAL-00009" summary="remove registry">
+      <created>1599742023710</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1599742023710</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add registry">
+      <created>1599742652019</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1599742652019</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Update keycloak-dev.json">
+      <created>1599753456138</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1599753456138</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Small changes">
+      <created>1600026312155</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1600026312155</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Small changes">
+      <created>1600179409315</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1600179409315</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Change build">
+      <created>1600191062059</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1600191062059</updated>
+    </task>
+    <task id="LOCAL-00015" summary="env variables">
+      <created>1600192869983</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1600192869983</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../.." />
+    </ignored-roots>
+    <MESSAGE value="Update .gitignore" />
+    <MESSAGE value="Add deployment files" />
+    <MESSAGE value="Add deployment config" />
+    <MESSAGE value="Update config" />
+    <MESSAGE value="Update config 2" />
+    <MESSAGE value="Add debug" />
+    <MESSAGE value="remove registry" />
+    <MESSAGE value="add registry" />
+    <MESSAGE value="Update keycloak-dev.json" />
+    <MESSAGE value="Small changes" />
+    <MESSAGE value="Change build" />
+    <MESSAGE value="env variables" />
+    <option name="LAST_COMMIT_MESSAGE" value="env variables" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="816" y="268" key="CommitChangelistDialog2" timestamp="1598207556331">
+    <state x="1126" y="592" key="#ESLint" timestamp="1598208178041">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="816" y="268" key="CommitChangelistDialog2/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598207556331" />
+    <state x="1126" y="592" key="#ESLint/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598208178041" />
+    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599739765344">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1599739765344" />
+    <state x="920" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600171868863">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="920" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1600171868863" />
+    <state x="816" y="268" key="CommitChangelistDialog2" timestamp="1600192869365">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="816" y="268" key="CommitChangelistDialog2/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1600192869365" />
+    <state x="1119" y="450" key="EnvironmentVariablesDialog" timestamp="1599739586759">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1119" y="450" key="EnvironmentVariablesDialog/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1599739586759" />
     <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1598119937374">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598119937374" />
-    <state width="2540" height="400" key="GridCell.Tab.0.bottom" timestamp="1598207595805">
+    <state width="2540" height="387" key="GridCell.Tab.0.bottom" timestamp="1600192115209">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2540" height="400" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598207595805" />
-    <state width="2540" height="400" key="GridCell.Tab.0.center" timestamp="1598207595805">
+    <state width="2540" height="387" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1600192115209" />
+    <state width="2540" height="387" key="GridCell.Tab.0.center" timestamp="1600192115203">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2540" height="400" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598207595805" />
-    <state width="2540" height="400" key="GridCell.Tab.0.left" timestamp="1598207595805">
+    <state width="2540" height="387" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1600192115203" />
+    <state width="2540" height="387" key="GridCell.Tab.0.left" timestamp="1600192115203">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2540" height="400" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598207595805" />
-    <state width="2540" height="400" key="GridCell.Tab.0.right" timestamp="1598207595805">
+    <state width="2540" height="387" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1600192115203" />
+    <state width="2540" height="387" key="GridCell.Tab.0.right" timestamp="1600192115208">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2540" height="400" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598207595805" />
+    <state width="2540" height="387" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1600192115208" />
     <state width="2540" height="492" key="GridCell.Tab.1.bottom" timestamp="1597842448319">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -234,9 +344,21 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2540" height="492" key="GridCell.Tab.3.right/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1597842448320" />
-    <state x="963" y="411" width="634" height="578" key="find.popup" timestamp="1598199690049">
+    <state x="995" y="402" key="RollbackChangesDialog" timestamp="1600177619388">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="963" y="411" width="634" height="578" key="find.popup/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598199690049" />
+    <state x="995" y="402" key="RollbackChangesDialog/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1600177619388" />
+    <state x="811" y="345" key="SettingsEditor" timestamp="1598207802292">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="811" y="345" key="SettingsEditor/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598207802291" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1600192871219">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1600192871219" />
+    <state x="963" y="411" width="634" height="578" key="find.popup" timestamp="1600192111316">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="963" y="411" width="634" height="578" key="find.popup/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1600192111316" />
   </component>
 </project>
