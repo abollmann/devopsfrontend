@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fea6677c-566f-4b1e-8b24-ab9cfcf673e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/environment/config-prod.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/environment/dev.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/environment/prod.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/environment/stag.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploy/deployment-dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/deployment-dev.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/helper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy/deployment-prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/deployment-prod.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy/deployment-stag.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/deployment-stag.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +124,7 @@
       <workItem from="1599762162831" duration="1763000" />
       <workItem from="1599817031290" duration="3418000" />
       <workItem from="1599991363504" duration="10936000" />
-      <workItem from="1600170757576" duration="10589000" />
+      <workItem from="1600170757576" duration="11940000" />
     </task>
     <task id="LOCAL-00001" summary="Update .gitignore">
       <created>1598207879575</created>
@@ -234,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600191062059</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="env variables">
+      <created>1600192869983</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1600192869983</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,7 +252,8 @@
     <MESSAGE value="Update keycloak-dev.json" />
     <MESSAGE value="Small changes" />
     <MESSAGE value="Change build" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change build" />
+    <MESSAGE value="env variables" />
+    <option name="LAST_COMMIT_MESSAGE" value="env variables" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1126" y="592" key="#ESLint" timestamp="1598208178041">
@@ -270,10 +268,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="920" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1600171868863" />
-    <state x="816" y="268" key="CommitChangelistDialog2" timestamp="1600191061479">
+    <state x="816" y="268" key="CommitChangelistDialog2" timestamp="1600192869365">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="816" y="268" key="CommitChangelistDialog2/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1600191061479" />
+    <state x="816" y="268" key="CommitChangelistDialog2/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1600192869365" />
     <state x="1119" y="450" key="EnvironmentVariablesDialog" timestamp="1599739586759">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -354,10 +352,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="811" y="345" key="SettingsEditor/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1598207802291" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1600191063160">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1600192871219">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1600191063160" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/-1920.209.1920.1040@0.0.2560.1400" timestamp="1600192871219" />
     <state x="963" y="411" width="634" height="578" key="find.popup" timestamp="1600192111316">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

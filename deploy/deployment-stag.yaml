@@ -36,7 +36,13 @@ spec:
           image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
           ports:
             - containerPort: 80
-          env:
-            - name: REACT_APP_NAMESPACE
-              value: stag
+        volumeMounts:
+          - name: heaterbilling-config-vol
+            mountPath: /usr/share/nginx/html/config.js
+            subPath: config.js
+            readOnly: true
+      volumes:
+        - name: heaterbilling-config-vol
+          configMap:
+            name: frontend-conf-prod
 
