@@ -44,4 +44,4 @@ spec:
       volumes:
         - name: heaterbilling-config-vol
           configMap:
-            name: frontend-conf-stag
+            name: frontend-conf-prod
