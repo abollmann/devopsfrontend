@@ -26,6 +26,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
   <component name="ProjectId" id="1gHga7NOYC6b6Oot40okOzU7kqk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -125,6 +128,7 @@
       <workItem from="1599817031290" duration="3418000" />
       <workItem from="1599991363504" duration="10936000" />
       <workItem from="1600170757576" duration="11940000" />
+      <workItem from="1600200889448" duration="720000" />
     </task>
     <task id="LOCAL-00001" summary="Update .gitignore">
       <created>1598207879575</created>

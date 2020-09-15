@@ -45,5 +45,3 @@ spec:
         - name: heaterbilling-config-vol
           configMap:
             name: frontend-conf-stag
-
-
