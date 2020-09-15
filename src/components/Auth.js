@@ -7,7 +7,7 @@ const Auth = () => {
   const dispatch = useDispatch()
   const user = useSelector(state => state.auth.user)
   const keycloak = Keycloak(`/keycloak-${process.env.REACT_APP_NAMESPACE}.json` )
-
+  console.log(process.env.REACT_APP_NAMESPACE)
   if (user === null) {
     keycloak.init({onLoad: 'login-required'}).then(() => {
       dispatch(authActions.setUser(keycloak.tokenParsed))
