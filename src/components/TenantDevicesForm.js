@@ -49,7 +49,7 @@ const TenantDevicesForm = () => {
 
   useEffect(() => {
     async function collectInitialData() {
-      if (keycloak.token !== undefined) {
+      if (keycloak !== null) {
         dispatch(getAllDevices(keycloak.token))
         dispatch(getAllTenants(keycloak.token))
         dispatch(getAllBuildings(keycloak.token))

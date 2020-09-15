@@ -17,7 +17,7 @@ const formatTenantData = (tenants) => {
       key: tenant['_id'],
       devices: tenant.devices.length,
       name: `${tenant.first_name} ${tenant.last_name}`,
-      total_meter_value: `${tenant.total_meter_value * MAGIC_NUMBER}€`,
+      total_meter_value: `${Number(tenant.total_meter_value * MAGIC_NUMBER).toFixed(2)}€`,
       home: concatAddress(tenant.home)
     }
   })
@@ -32,7 +32,7 @@ const Tenants = () => {
 
   useEffect(() => {
     async function collectInitialData() {
-      if (keycloak.token !== undefined) {
+      if (keycloak !== null) {
         dispatch(getAllTenants(keycloak.token))
       }
     }

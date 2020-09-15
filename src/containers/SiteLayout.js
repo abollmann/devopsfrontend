@@ -32,8 +32,8 @@ const SiteLayout = () => {
   const toggle = () => setCollapsed(!collapsed)
 
   const logout = () => {
-    keycloak.logout()
     dispatch(authActions.logout())
+    keycloak.logout()
   }
 
   if (user === null) {

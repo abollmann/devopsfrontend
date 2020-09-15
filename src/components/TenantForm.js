@@ -37,7 +37,7 @@ const TenantForm = () => {
   console.log(buildings)
   useEffect(() => {
     async function collectInitialData() {
-      if (keycloak.token !== undefined) {
+      if (keycloak !== null) {
         dispatch(getAllBuildings(keycloak.token))
       }
     }

@@ -1,6 +1,6 @@
 export const getRole = userData => {
   try {
-    return userData.resource_access['api-gateway-login'].roles.includes('admin') ? 'Administrator' : 'Mieter'
+    return userData.resource_access[`api-gateway-login-${process.env.REACT_APP_NAMESPACE}`].roles.includes('admin') ? 'Administrator' : 'Mieter'
   } catch {
     return 'Mieter'
   }

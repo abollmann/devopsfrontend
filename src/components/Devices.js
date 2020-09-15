@@ -62,7 +62,7 @@ const Devices = () => {
 
   useEffect(() => {
     async function collectInitialData() {
-      if (keycloak.token !== undefined) {
+      if (keycloak !== null) {
         dispatch(getAllDevices(keycloak.token))
       }
     }

@@ -4,7 +4,7 @@ import Keycloak from 'keycloak-js'
 
 const INITIAL_STATE = {
   user: null,
-  keycloak: Keycloak(`/keycloak-${process.env.REACT_APP_NAMESPACE}.json` )
+  keycloak: null
 }
 
 export default function authReducer(state = INITIAL_STATE, action) {
