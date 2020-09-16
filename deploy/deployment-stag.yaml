@@ -37,11 +37,11 @@ spec:
           ports:
             - containerPort: 80
           volumeMounts:
-            - name: heaterbilling-config-vol
+            - name: heaterbilling-config-vol-stag
               mountPath: /usr/share/nginx/html/config.js
               subPath: config.js
               readOnly: true
       volumes:
-        - name: heaterbilling-config-vol
+        - name: heaterbilling-config-vol-stag
           configMap:
             name: frontend-conf-prod
