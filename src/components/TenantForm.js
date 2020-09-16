@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react'
-import {Row, Col, Form, Input, Button, Select, Divider, Alert} from 'antd'
+import {Form, Input, Button, Select, Divider, Alert} from 'antd'
 import tenantService from '../services/tenants'
 import {useDispatch, useSelector} from 'react-redux'
 import {getAllBuildings} from '../redux/buildings/reducer'
@@ -8,22 +8,23 @@ import {concatAddress} from './helper'
 const {Option} = Select
 const layout = {
   labelCol: {
-    span: 8,
+    span: 2,
+    offset: 8,
   },
   wrapperCol: {
-    span: 16,
+    offset: 0,
+    span: 6,
   },
   type: 'flex',
   justify: 'center',
 }
 const tailLayout = {
   wrapperCol: {
-    offset: 8,
-    span: 16,
+    offset: 4,
+    span: 8,
   },
   type: 'flex',
   justify: 'center',
-  align: 'middle'
 }
 
 const TenantForm = () => {
@@ -34,7 +35,6 @@ const TenantForm = () => {
 
   const dispatch = useDispatch()
   const buildings = useSelector(state => state.buildings.data)
-  console.log(buildings)
   useEffect(() => {
     async function collectInitialData() {
       if (keycloak !== null) {
@@ -47,6 +47,7 @@ const TenantForm = () => {
 
 
   const onFinish = values => {
+    delete values['customizeGender']
     tenantService.create(keycloak.token, values)
       .then(() => setSuccessMessage(true))
       .catch(() => setErrorMessage(true))
@@ -57,6 +58,7 @@ const TenantForm = () => {
   }
 
   return (
+
     <Form {...layout} ref={formRef} name="control-ref" onFinish={onFinish}>
       {successMessage &&
       <Alert
@@ -78,110 +80,99 @@ const TenantForm = () => {
       />
       }
       <Divider orientation="center">Persönliche Daten</Divider>
-      <Row gutter={24}>
-        <Col span={12}>
-          <Form.Item
-            name="first_name"
-            label="Vorname"
-            rules={[
-              {
-                required: true,
-              },
-            ]}
-          >
-            <Input/>
-          </Form.Item>
-        </Col>
-        <Col span={12}>
-          <Form.Item
-            name="last_name"
-            label="Nachname"
-            rules={[
-              {
-                required: true,
-              },
-            ]}
-          >
-            <Input/>
-          </Form.Item>
-        </Col>
-        <Col span={12}>
-          <Form.Item
-            name="email"
-            label="Email"
-            rules={[
-              {
-                type: 'email',
-                required: true,
-              },
-            ]}
-          >
-            <Input/>
-          </Form.Item>
-        </Col>
-        <Col span={12}>
-          <Form.Item
-            name="gender"
-            label="Geschlecht"
-            rules={[
-              {
-                required: true,
-              },
-            ]}
-          >
-            <Select
-              placeholder="Geschlecht auswählen"
-              allowClear
+      <Form.Item
+        name="first_name"
+        label="Vorname"
+        rules={[
+          {
+            required: true,
+          },
+        ]}
+      >
+        <Input/>
+      </Form.Item>
+      <Form.Item
+        name="last_name"
+        label="Nachname"
+        rules={[
+          {
+            required: true,
+          },
+        ]}
+      >
+        <Input/>
+      </Form.Item>
+      <Form.Item
+        name="email"
+        label="Email"
+        rules={[
+          {
+            type: 'email',
+            required: true,
+          },
+        ]}
+      >
+        <Input/>
+      </Form.Item>
+      <Form.Item
+        name="home_building"
+        label="Gebäude"
+        rules={[
+          {
+            required: true,
+          },
+        ]}
+      >
+        <Select
+          placeholder={"Wohnsitz auswählen"}
+          allowClear
+        >
+          {buildings.map(building => <Option key={building['_id']}
+                                             value={building['_id']}>{concatAddress(building)}</Option>)}
+        </Select>
+      </Form.Item>
+      <Form.Item
+        name="gender"
+        label="Geschlecht"
+        rules={[
+          {
+            required: true,
+          },
+        ]}
+      >
+        <Select
+          placeholder="Geschlecht auswählen"
+          allowClear
+        >
+          <Option value="männlich">männlich</Option>
+          <Option value="weiblich">weiblich</Option>
+          <Option value="andere">andere</Option>
+        </Select>
+      </Form.Item>
+      <Form.Item
+        noStyle
+        shouldUpdate={(prevValues, currentValues) => prevValues.gender !== currentValues.gender}
+      >
+        {({getFieldValue}) =>
+          getFieldValue('gender') === 'andere' ? (
+            <Form.Item
+              name="customizeGender"
+              label="Gewünschtes Geschlecht"
+              rules={[
+                {
+                  required: true,
+                },
+              ]}
+              labelCol={{
+                span: 4,
+                offset: 6,
+              }}
             >
-              <Option value="male">männlich</Option>
-              <Option value="female">weiblich</Option>
-              <Option value="other">andere</Option>
-            </Select>
-          </Form.Item>
-        </Col>
-        <Col span={12}>
-          <Form.Item
-            name="home_building"
-            label="Gebäude"
-            rules={[
-              {
-                required: true,
-              },
-            ]}
-          >
-            <Select
-              placeholder={"Wohnsitz auswählen"}
-              allowClear
-            >
-              {buildings.map(building => <Option key={building['_id']}
-                                                 value={building['_id']}>{concatAddress(building)}</Option>)}
-            </Select>
-          </Form.Item>
-        </Col>
-        <Col span={12}>
-          <Form.Item
-            noStyle
-            shouldUpdate={(prevValues, currentValues) => prevValues.gender !== currentValues.gender}
-          >
-            {({getFieldValue}) =>
-              getFieldValue('gender') === 'other' ? (
-                <Form.Item
-                  name="customizeGender"
-                  label="Gewünschtes Geschlecht"
-                  rules={[
-                    {
-                      required: true,
-                    },
-                  ]}
-
-                >
-                  <Input/>
-                </Form.Item>
-              ) : null
-            }
-          </Form.Item>
-        </Col>
-      </Row>
+              <Input/>
+            </Form.Item>
+          ) : null
+        }
+      </Form.Item>
       <Form.Item {...tailLayout}>
         <Button type="primary" htmlType="submit">
           Mieter erstellen
@@ -191,6 +182,7 @@ const TenantForm = () => {
         </Button>
       </Form.Item>
     </Form>
+
   )
 }
 

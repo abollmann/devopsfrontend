@@ -1,9 +1,8 @@
 import {useDispatch, useSelector} from 'react-redux'
 import React, {useEffect} from 'react'
-import {Table, Button, Popconfirm} from 'antd'
+import {Table, Button, Popconfirm, Divider} from 'antd'
 import {getAllTenants} from '../redux/tenants/reducer'
 import {concatAddress} from './helper'
-import {useHistory} from 'react-router-dom'
 import tenantService from '../services/tenants'
 import deviceService from '../services/devices'
 
@@ -28,7 +27,6 @@ const Tenants = () => {
   const dispatch = useDispatch()
   const keycloak = useSelector(state => state.auth.keycloak)
   const tenants = useSelector(state => state.tenants.data)
-  const history = useHistory()
 
   useEffect(() => {
     async function collectInitialData() {
@@ -79,11 +77,17 @@ const Tenants = () => {
       render: id => (
         <ButtonGroup>
           <Popconfirm title="Mieter abrechnen?" okText="Ja" cancelText="Abbrechen"
-                      onConfirm={() => deviceService.resetMeterValue(keycloak.token, {tenant_id: id})}>
+                      onConfirm={() => {
+                        deviceService.resetMeterValue(keycloak.token, {tenant_id: id})
+                        dispatch(getAllTenants(keycloak.token))
+                      }}>
             <Button>Abrechnen</Button>
           </Popconfirm>
           <Popconfirm title="Mieter löschen?" okText="Ja" cancelText="Abbrechen"
-                      onConfirm={() => tenantService.deleteTenant(keycloak.token, id)}>
+                      onConfirm={() => {
+                        tenantService.deleteTenant(keycloak.token, id)
+                        dispatch(getAllTenants(keycloak.token))
+                      }}>
             <Button type="danger">Löschen</Button>
           </Popconfirm>
         </ButtonGroup>
@@ -94,7 +98,7 @@ const Tenants = () => {
   const options = {
     bordered: true,
     pagination: {position: 'bottom'},
-    title: () => 'Mieterdaten'
+    title: () => <Divider orientation="center">Mieterdaten</Divider>
   }
   if (tenants == null) return null
   return (

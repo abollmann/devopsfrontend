@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from 'react-redux'
 import React, {useEffect} from 'react'
-import { Table } from 'antd'
+import {Divider, Table} from 'antd'
 import {timeConverter} from './helper'
 import {getAllDevices} from '../redux/devices/reducer';
 
@@ -74,7 +74,7 @@ const Devices = () => {
   const options = {
     bordered: true,
     pagination: { position: 'bottom' },
-    title: () => 'Gerätedaten'
+    title: () => <Divider orientation="center">Gerätedaten</Divider>
   }
   return (
     <div>

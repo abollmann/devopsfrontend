@@ -13,20 +13,23 @@ const {Option} = Select
 
 const layout = {
   labelCol: {
-    span: 4,
+    span: 2,
+    offset: 7,
   },
   wrapperCol: {
-    span: 12,
+    offset: 0,
+    span: 8,
   },
   type: 'flex',
   justify: 'center',
 }
-
 const tailLayout = {
   wrapperCol: {
-    offset: 4,
-    span: 12,
+    offset: 5,
+    span: 11,
   },
+  type: 'flex',
+  justify: 'center',
 }
 
 const TenantDevicesForm = () => {
@@ -44,15 +47,11 @@ const TenantDevicesForm = () => {
   const buildings = useSelector(state => state.buildings.data)
 
   const location = useLocation()
-  const history = useHistory()
-
 
   useEffect(() => {
     async function collectInitialData() {
       if (keycloak !== null) {
-        dispatch(getAllDevices(keycloak.token))
-        dispatch(getAllTenants(keycloak.token))
-        dispatch(getAllBuildings(keycloak.token))
+        reload()
       }
       if (location.state !== undefined) {
         setSelectedTenant(location.state.tenant)
@@ -123,24 +122,31 @@ const TenantDevicesForm = () => {
     tenantService.distributeDevices(keycloak.token, data)
       .then(() => {
         setSuccessMessage('Geräte erfolgreich hinzugefügt')
+        reload()
+        onReset()
       })
       .catch(() => setErrorMessage('Geräte konnten nicht hinzugefügt werden'))
-    onReset()
   }
 
   const removeDevices = () => {
     tenantService.distributeDevices(keycloak.token, {tenant_id: selectedTenant, device_ids: []})
       .then(() => {
         setSuccessMessage('Geräte erfolgreich entfernt')
+        reload()
+        onReset()
       })
       .catch(() => setErrorMessage('Geräte konnten nicht enternt werden'))
-    onReset()
   }
 
   const onReset = () => {
     formRef.current.resetFields()
     handleDeselectTenant()
-    history.push(0)
+  }
+
+  const reload = () => {
+    dispatch(getAllDevices(keycloak.token))
+    dispatch(getAllTenants(keycloak.token))
+    dispatch(getAllBuildings(keycloak.token))
   }
 
   return (
@@ -148,8 +154,7 @@ const TenantDevicesForm = () => {
       {...layout}
       ref={formRef}
       name="control-ref"
-      onFinish={onFinish}
-      initialValues={{'tenant_id': selectedTenant}}>
+      onFinish={onFinish}>
       {successMessage &&
       <Alert
         message={successMessage}
@@ -234,7 +239,7 @@ const TenantDevicesForm = () => {
         <Button htmlType="button" onClick={onReset}>
           Zurücksetzen
         </Button>
-        <Popconfirm title="Zugewiesene Geräte entfernen?" okText="Ja" cancelText="Abbrechen" onConfirm={removeDevices}>
+        <Popconfirm title="Zugewiesene Geräte entfernen?" okText="Ja" cancelText="Abbrechen" onConfirm={removeDevices} disabled={selectedTenant === null}>
           <Button type="danger" disabled={selectedTenant === null}>
             Geräte entfernen
           </Button>

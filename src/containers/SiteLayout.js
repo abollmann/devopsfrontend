@@ -56,7 +56,7 @@ const SiteLayout = () => {
               <Link to="/devices">Gerätedaten</Link>
             </Menu.Item>
             <Menu.Item key="3" icon={<UserAddOutlined/>}>
-              <Link to="/users">Nutzer erstellen</Link>
+              <Link to="/users">Mieter erstellen</Link>
             </Menu.Item>
             <Menu.Item key="4" icon={<ShareAltOutlined/>}>
               <Link to="/distribute">Geräte zuweisen</Link>
@@ -73,7 +73,7 @@ const SiteLayout = () => {
               onClick: toggle
             })}
             <Avatar size="small"
-                    icon={<UserOutlined/>}/> {user.preferred_username}, {getRole(user)}
+                    icon={<UserOutlined/>}/> <b>{user.preferred_username}, {getRole(user)}</b>
           </Header>
           <Content
             className="site-layout-background"
