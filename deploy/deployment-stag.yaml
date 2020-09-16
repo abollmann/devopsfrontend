@@ -30,7 +30,7 @@ spec:
     spec:
       imagePullSecrets:
         - name: pipeline-docker-registry
-      nodeName: app-node-1
+      nodeName: app-node-2
       containers:
         - name: heaterbilling
           image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
