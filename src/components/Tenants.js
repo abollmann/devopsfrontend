@@ -1,9 +1,9 @@
 import {useDispatch, useSelector} from 'react-redux'
 import React, {useEffect} from 'react'
-import { Table, Button} from 'antd'
+import {Table, Button, Popconfirm} from 'antd'
 import {getAllTenants} from '../redux/tenants/reducer'
 import {concatAddress} from './helper'
-import { useHistory } from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import tenantService from '../services/tenants'
 import deviceService from '../services/devices'
 
@@ -78,9 +78,14 @@ const Tenants = () => {
       key: '_id',
       render: id => (
         <ButtonGroup>
-          <Button onClick={() => history.push({pathname: '/devices', state: {tenant: id}})}>Geräte</Button>
-          <Button onClick={() => deviceService.resetMeterValue(keycloak.token, {tenant_id: id})}>Abrechnen</Button>
-          <Button type="danger" onClick={() => tenantService.deleteTenant(keycloak.token, id)}>Löschen</Button>
+          <Popconfirm title="Mieter abrechnen?" okText="Ja" cancelText="Abbrechen"
+                      onConfirm={() => deviceService.resetMeterValue(keycloak.token, {tenant_id: id})}>
+            <Button>Abrechnen</Button>
+          </Popconfirm>
+          <Popconfirm title="Mieter löschen?" okText="Ja" cancelText="Abbrechen"
+                      onConfirm={() => tenantService.deleteTenant(keycloak.token, id)}>
+            <Button type="danger">Löschen</Button>
+          </Popconfirm>
         </ButtonGroup>
       ),
     }
@@ -88,13 +93,13 @@ const Tenants = () => {
 
   const options = {
     bordered: true,
-    pagination: { position: 'bottom' },
-    title: () => 'Mieter'
+    pagination: {position: 'bottom'},
+    title: () => 'Mieterdaten'
   }
   if (tenants == null) return null
   return (
     <div>
-      <Table {...options} columns={columns} dataSource={formatTenantData(tenants)} />
+      <Table {...options} columns={columns} dataSource={formatTenantData(tenants)}/>
     </div>
   )
 }

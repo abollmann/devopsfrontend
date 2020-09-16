@@ -7,7 +7,8 @@ import {
   ShareAltOutlined,
   MenuUnfoldOutlined,
   UserAddOutlined,
-  LogoutOutlined
+  LogoutOutlined,
+  UsergroupDeleteOutlined
 } from '@ant-design/icons'
 import './SiteLayout.css'
 import {useDispatch, useSelector} from 'react-redux'
@@ -22,6 +23,7 @@ import {
 import TenantForm from '../components/TenantForm'
 import TenantDevicesForm from '../components/TenantDevicesForm'
 import Tenants from '../components/Tenants';
+import Devices from '../components/Devices';
 
 const {Header, Sider, Content, Footer} = Layout
 
@@ -47,16 +49,19 @@ const SiteLayout = () => {
           <div className="logo">
           </div>
           <Menu theme="dark" mode="inline">
-            <Menu.Item key="1" icon={<DatabaseOutlined/>}>
+            <Menu.Item key="1" icon={<UsergroupDeleteOutlined/>}>
               <Link to="/">Mieterdaten</Link>
             </Menu.Item>
-            <Menu.Item key="2" icon={<UserAddOutlined/>}>
+            <Menu.Item key="2" icon={<DatabaseOutlined/>}>
+              <Link to="/devices">Gerätedaten</Link>
+            </Menu.Item>
+            <Menu.Item key="3" icon={<UserAddOutlined/>}>
               <Link to="/users">Nutzer erstellen</Link>
             </Menu.Item>
-            <Menu.Item key="3" icon={<ShareAltOutlined/>}>
-              <Link to="/devices">Geräte zuweisen</Link>
+            <Menu.Item key="4" icon={<ShareAltOutlined/>}>
+              <Link to="/distribute">Geräte zuweisen</Link>
             </Menu.Item>
-            <Menu.Item key="4" icon={<LogoutOutlined/>} onClick={logout}>
+            <Menu.Item key="5" icon={<LogoutOutlined/>} onClick={logout}>
               <Link to="/">Logout</Link>
             </Menu.Item>
           </Menu>
@@ -83,6 +88,9 @@ const SiteLayout = () => {
                 <TenantForm />
               </Route>
               <Route path="/devices">
+                <Devices />
+              </Route>
+              <Route path="/distribute">
                 <TenantDevicesForm/>
               </Route>
               <Route path="/">

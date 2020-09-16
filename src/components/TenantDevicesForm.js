@@ -234,7 +234,7 @@ const TenantDevicesForm = () => {
         <Button htmlType="button" onClick={onReset}>
           Zurücksetzen
         </Button>
-        <Popconfirm title="ALLE zugewiesenen Geräte entfernen" okText="Ja" cancelText="Nein" onConfirm={removeDevices}>
+        <Popconfirm title="Zugewiesene Geräte entfernen?" okText="Ja" cancelText="Abbrechen" onConfirm={removeDevices}>
           <Button type="danger" disabled={selectedTenant === null}>
             Geräte entfernen
           </Button>

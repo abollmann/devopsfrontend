@@ -27,14 +27,14 @@ const columns = [
   },
   {
     title: 'Messwert',
-    dataIndex: 'meter_value',
+    dataIndex: 'meter_value_diff',
     sorter: (a, b) => a.meter_value - b.meter_value,
     sortDirections: ['descend', 'ascend'],
   },
   {
-    title: 'Rechnung',
-    dataIndex: 'current_price',
-    sorter: (a, b) => a.meter_value - b.meter_value,
+    title: 'Belegt',
+    dataIndex: 'occupied',
+    sorter: (a, b) => a.occupied - b.occupied,
     sortDirections: ['descend', 'ascend'],
   }
 ]
@@ -49,7 +49,7 @@ const formatDeviceData = (data) => {
       name: key,
       temperature: `${Number(device.temperature).toFixed(2)}°`,
       timestamp: timeConverter(device.timestamp),
-      current_price: `${device.current_price}€`
+      occupied: (device.tenant !== undefined && device.tenant !== null) ? 'Ja' : 'Nein'
     }
   })
 }
@@ -57,8 +57,8 @@ const formatDeviceData = (data) => {
 
 const Devices = () => {
   const dispatch = useDispatch()
-  const {user, keycloak} = useSelector(state => state.auth)
-  const {data, error} = useSelector(state => state.devices)
+  const keycloak = useSelector(state => state.auth.keycloak)
+  const devices = useSelector(state => state.devices.data)
 
   useEffect(() => {
     async function collectInitialData() {
@@ -70,16 +70,15 @@ const Devices = () => {
     collectInitialData()
   }, [dispatch, keycloak])
 
-  console.log(data)
+  console.log(devices)
   const options = {
     bordered: true,
     pagination: { position: 'bottom' },
-    title: () => 'Messgeräte'
+    title: () => 'Gerätedaten'
   }
-  if (data == null) return null
   return (
     <div>
-      <Table {...options} columns={columns} dataSource={formatDeviceData(data)} />
+      <Table {...options} columns={columns} dataSource={formatDeviceData(devices)} />
     </div>
   )
 }
