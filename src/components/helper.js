@@ -7,7 +7,7 @@ export const getRole = userData => {
 }
 
 export const timeConverter = timestamp => {
-  const a = new Date(timestamp)
+  const a = new Date(timestamp * 1000)
   const months = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez']
   const year = a.getFullYear()
   const month = months[a.getMonth()]
